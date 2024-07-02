@@ -11,37 +11,30 @@ export default {
         LMarker,
     },
     props: {
-        lat: Number,
-        lng: Number,
-        zoom: {
+        lat: {
             type: Number,
-            default: 3
+            default: 50.45466
         },
+        lng: {
+            type: Number,
+            default: 30.5238
+        },
+        zoom: Number,
     },
-    data() {
-        return {
-            centerPositions: [47.41322, -1.219482],
-            coordinates: [50, 50],
-        }
-    },
-    beforeMount() {
-        this.coordinates = [this.lat, this.lng];
-        this.centerPositions = this.coordinates;
-    }
 }
 </script>
 
 <template>
     <div class="map-container">
         <div class="map" style="width: 100%; height: calc(100vh - 255px); position: relative; outline-style: none;">
-            <l-map ref="map" :zoom="zoom" :center=centerPositions>
+            <l-map ref="map" :zoom="zoom" :center="[this.lat, this.lng]">
                 <l-tile-layer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     layer-type="base"
                     name="OpenStreetMap"
                 ></l-tile-layer>
 
-                <l-marker :lat-lng="coordinates" draggable></l-marker>
+                <l-marker :lat-lng="[this.lat, this.lng]" draggable></l-marker>
             </l-map>
         </div>
     </div>

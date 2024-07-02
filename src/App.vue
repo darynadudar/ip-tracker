@@ -5,6 +5,3 @@ import IpTracker from './components/IpTracker.vue'
 <template>
   <IpTracker />
 </template>
-
-<style scoped>
-</style>
