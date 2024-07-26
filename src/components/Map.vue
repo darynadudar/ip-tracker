@@ -27,7 +27,7 @@ export default {
 <template>
     <div class="map-container">
         <div class="map" style="width: 100%; height: calc(100vh - 255px); position: relative; outline-style: none;">
-            <l-map ref="map" :zoom="zoom" :center="[this.lat, this.lng]">
+            <l-map ref="map" :zoom="zoom" :center="[lat, lng]">
                 <l-tile-layer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     layer-type="base"

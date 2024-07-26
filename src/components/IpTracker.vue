@@ -13,7 +13,11 @@ export default {
             requestUrl: 'https://geo.ipify.org/api/v2/country,city',
             apiKey: 'at_OAuI07SYhjn3TtNJZXQhapw7pZoUW',
             searchQuery: '',
-            searchData: '',
+            searchData: {
+                "ip": "",
+                "location": {},
+                "isp": ""
+            },
             zoom: 3,
             isButtonDisabled: true,
         }
